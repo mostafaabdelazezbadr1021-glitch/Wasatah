@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // الدالة المسؤولة عن التوجيه الفوري عند الضغط على الكارت
 function selectRole(role) {
     if (role === 'Seller') {
-        window.location.href = "seller.html";
+        window.location.href = "Seller.html";
     } else if (role === 'Buyer') {
         window.location.href = "buyer.html";
     }
