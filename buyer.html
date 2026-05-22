@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasatah - Buyer</title>
+    <link rel="stylesheet" href="buyer.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar" style="height: 50px;">
+            <div class="logo">Wasatah</div>
+            <ul class="nav-links">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="../portfolio/index.html" target="_blank">About me</a></li>
+                <li><a href="wasatah.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="buyer-container">
+            
+            <div id="codeSection">
+                <h1>secure deal</h1>
+                <div class="subtitle">Enter the deal code received from the seller to view the details</div>
+                
+                <div class="code-input-group">
+                    <label for="dealCode"> <center> Test Code (123456789012) </center></label>
+                    <input type="text" id="dealCode" class="code-field" placeholder="XXXX/XXXX/XXXX" autocomplete="off">
+                </div>
+                
+                <button class="btn btn-primary" id="checkCodeBtn">Check Deal</button>
+            </div>
+
+            <div id="detailsSection" class="hidden">
+                <h1>Deal Details</h1>
+                <div class="subtitle">Review the seller's terms and view the file to activate the smart guarantee</div>
+
+                <div class="deal-card">
+                    <div class="deal-label"> product name</div>
+                    <div class="deal-value" id="dealTitle"> professional logo design for a car company </div>
+
+                    <div class="deal-label">Required Amount to Secure</div>
+                    <div class="deal-value price" id="dealPrice">50$</div>
+
+                    <div class="deal-label">  standard description for inspection (AI Specs)</div>
+                    <div class="specs-box" id="dealSpecs">
+                        <p>Logo for 'Al Badr' with a dark blue background and high-quality PNG format without watermarks</p>
+                    </div>
+                </div>
+
+                <div class="deal-label" style="text-align: right; margin-bottom: 4px; padding-right: 5px;"> File available for preview </div>
+                <div class="preview-display-zone">
+                    <div class="preview-icon">👁️</div>
+                    <div class="preview-info">
+                        <div class="preview-title" id="previewFileName">Logo_Watermarked.png</div>
+                        <div class="preview-desc">File is protected - click to preview before payment</div>
+                    </div>
+                    <button class="view-btn" id="viewFileBtn">Preview</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-reject" id="rejectBtn">Reject Deal</button>
+                    <button class="btn btn-accept" id="acceptBtn">Accept and Pay</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="paymentModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h2>Secure Payment</h2>
+            <div class="subtitle">The amount of <span style="color: var(--accent-blue); font-weight: bold;">50$</span> will be held in escrow until the AI verification of the file is complete</div>
+
+            <div class="payment-tabs">
+                <button class="tab-btn active" data-tab="cardTab">💳 Bank Card</button>
+                <button class="tab-btn" data-tab="walletTab">📱 Electronic Wallet</button>
+            </div>
+
+            <div id="cardTab" class="tab-content">
+                <form id="cardForm">
+                    <div class="modal-form-group">
+                        <label>Card Owner Name</label>
+                        <input type="text" required placeholder="Mostafa Badr">
+                    </div>
+                    <div class="modal-form-group">
+                        <label>Card Number</label>
+                        <input type="text" id="cardNumberInput" required placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
+                    </div>
+                    <div class="modal-form-row">
+                        <div class="modal-form-group">
+                            <label>Expiration Date</label>
+                            <input type="text" id="cardExpiryInput" required placeholder="MM/YY" maxlength="5" style="text-align: center;">
+                        </div>
+                        <div class="modal-form-group">
+                            <label>CVV</label>
+                            <input type="password" required placeholder="***" maxlength="3" style="text-align: center;">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-accept" style="margin-top: 15px;">Confirm Secure Payment</button>
+                </form>
+            </div>
+
+            <div id="walletTab" class="tab-content hidden">
+                <form id="walletForm">
+                    <div class="modal-form-group">
+                        <label>Phone Number registered with the wallet</label>
+                        <div class="phone-input-wrapper">
+                            <input type="tel" required placeholder="01XXXXXXXXX" maxlength="11" pattern="01[0125][0-9]{8}">
+                        </div>
+                        <span style="font-size: 10px; color: var(--text-muted); display: block; margin-top: 4px;">Supports Vodafone Cash, Orange Cash, Etisalat Cash, and WeChat Pay</span>
+                    </div>
+                    <button type="submit" class="btn btn-accept" style="margin-top: 25px;">Submit Payment Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="buyer.js"></script>
+</body>
+</html>

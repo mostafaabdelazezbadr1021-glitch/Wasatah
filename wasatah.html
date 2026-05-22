@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasatah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar" style="height: 50px;">
+            <div class="logo">Wasatah</div>
+            <ul class="nav-links">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact us </a></li>
+                <li><a href="../portfolio/index.html" target="_blank">About me </a></li>
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="choice-section" class="card">
+            <h2>?Welcome back, who are you today</h2>
+            
+            <div class="choices">
+                <div class="choice-box" onclick="selectRole('Seller')">
+                    <div class="icon">💰</div>
+                    <h3>Seller </h3>
+                    <p>I want to list my account or service for sale</p>
+                </div>
+                
+                <div class="choice-box" onclick="selectRole('Buyer')">
+                    <div class="icon">🛒</div>
+                    <h3>Buyer </h3>
+                    <p>I'm looking for reliable services or accounts</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

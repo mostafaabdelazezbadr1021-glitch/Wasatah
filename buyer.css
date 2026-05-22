@@ -1,0 +1,418 @@
+/* ================= إعدادات الهوية والألوان لـ وساطة ================= */
+:root {
+    --bg-dark: #12161a;          
+    --card-bg: #1e272e;          
+    --text-main: #ffffff;        
+    --text-muted: #8a95a5;       
+    --accent-blue: #6366f1;      
+    --accent-hover: #4f46e5;     
+    --success-color: #10b981;    
+    --danger-color: #ef4444;
+    --input-bg: rgba(255, 255, 255, 0.03); 
+    --border-color: rgba(255, 255, 255, 0.08); 
+}
+
+/* التصفير الشامل لضمان أبعاد متناسقة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    line-height: 1.5; 
+    min-height: 100vh; /* جعل الارتفاع مرن لمنع الشاشة السوداء */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================= الهيدر والـ Navbar ================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 5%; 
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-main);
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+/* ================= الحاوية الرئيسية والكروت ================= */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 40px 20px; 
+}
+
+.buyer-container {
+    background-color: var(--card-bg);
+    max-width: 450px; 
+    width: 100%;
+    padding: 30px; 
+    border-radius: 20px; 
+    border: 1px solid var(--border-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 22px; 
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 25px; 
+}
+
+/* ================= حقول الإدخال (Inputs) ================= */
+.code-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.code-input-group label {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: right;
+}
+
+.code-field {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    padding: 14px;
+    border-radius: 10px;
+    color: var(--text-main);
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 2px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.code-field:focus {
+    border-color: var(--accent-blue);
+}
+
+/* فئة الإخفاء العامة للتحكم بالجافا سكريبت */
+.hidden {
+    display: none !important;
+}
+
+/* ================= تفاصيل الصفقة المعروضة ================= */
+.deal-card {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.deal-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.deal-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.deal-value.price {
+    color: var(--accent-blue);
+    font-size: 18px;
+}
+
+.specs-box {
+    font-size: 13px;
+    color: #d1d5db;
+    background-color: rgba(255, 255, 255, 0.01);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    max-height: 80px;
+    overflow-y: auto;
+}
+
+/* زون معاينة الملف */
+.preview-display-zone {
+    border: 1px solid var(--border-color);
+    height: 75px; 
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-radius: 12px;
+    background-color: rgba(99, 102, 241, 0.03);
+    margin-bottom: 20px;
+}
+
+.preview-icon {
+    font-size: 22px;
+    margin-left: 12px;
+}
+
+.preview-info {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.preview-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.preview-desc {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.view-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-btn:hover {
+    background-color: var(--accent-blue);
+    border-color: var(--accent-blue);
+}
+
+/* ================= الأزرار العامة ================= */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-blue);
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.btn-accept {
+    background-color: var(--success-color);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.btn-accept:hover {
+    background-color: #059669;
+    transform: translateY(-1px);
+}
+
+.btn-reject {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.btn-reject:hover {
+    border-color: var(--danger-color);
+    color: var(--danger-color);
+    background-color: rgba(239, 68, 68, 0.02);
+}
+
+/* ================= استايلات نافذة الدفع المنبثقة (Modal) ================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    max-width: 420px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-align: center;
+    animation: slideUp 0.3s ease-out;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--danger-color);
+}
+
+.modal-card h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* التبويبات (Tabs) داخل بوابة الدفع */
+.payment-tabs {
+    display: flex;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 20px 0;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background-color: var(--accent-blue);
+    color: white;
+}
+
+/* فورم الدفع الإضافي */
+.modal-form-group {
+    margin-bottom: 12px;
+    text-align: right;
+}
+
+.modal-form-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.modal-form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.modal-form-group input:focus {
+    border-color: var(--accent-blue);
+}
+
+.modal-form-row {
+    display: flex;
+    gap: 10px;
+}
+
+/* أنيميشن الحركات والظهور */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* الـ Media Queries المتوافقة مع الشاشات الصغيرة */
+@media (max-width: 650px) {
+    .navbar { flex-direction: column; gap: 10px; text-align: center; }
+    .container { padding: 20px 10px; }
+    .buyer-container { padding: 20px; }
+    .modal-card { width: 95%; padding: 20px; }
+}

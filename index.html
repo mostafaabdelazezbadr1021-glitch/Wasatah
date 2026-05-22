@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasatah Login | Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="toggle-box">
+            <button type="button" class="toggle-btn active" id="btn-signin" onclick="showSignIn()">Sign In</button>
+            <button type="button" class="toggle-btn" id="btn-register" onclick="showRegister()">Register</button>
+        </div>
+
+        <form id="signin-form" class="auth-form" method="post">
+            <h2>Welcome back</h2>
+            
+            <div class="input-group">
+                <input type="email" placeholder="Email" required autofocus> 
+            </div>
+            
+            <div class="input-group">
+                <input type="password" placeholder="Password" required minlength="8" maxlength="16" > 
+            </div>
+
+            <button type="button" class="submit-btn" onclick="checkLogin()">Sign In</button>
+
+            <a href="#" class="switch-link" onclick="showRegister()">Create account &rarr;</a>
+        </form>
+
+        <form id="register-form" class="auth-form hidden" method="post" >
+            <h2>Create account</h2>
+            
+            <div class="input-group">
+                <input type="text" placeholder="Full Name" required  >
+            </div>
+            
+            <div class="input-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" placeholder="Password" required minlength="8" maxlength="16">
+            </div>
+            
+            <button type="button" class="submit-btn" onclick="checkRegister()">Create Account</button>
+
+            <a href="#" class="switch-link" onclick="showSignIn()">&larr; Back to login</a>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
