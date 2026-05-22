@@ -11,7 +11,7 @@ function selectRole(role) {
     if (role === 'Seller') {
         // alert("جارٍ توجيهك مباشرة إلى صفحة البائع... 💰");
         // مستقبلاً حط رابط صفحة البائع هنا:
-        window.location.href = "seller.html";
+        window.location.href = "Seller.html";
     } else if (role === 'Buyer') {
         // alert("جارٍ توجيهك مباشرة إلى صفحة المشتري... 🛒");
         // مستقبلاً حط رابط صفحة المشتري هنا:
